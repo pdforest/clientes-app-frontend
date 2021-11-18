@@ -1,0 +1,54 @@
+----------------------------------------------------
+Funcion flecha
+----------------------------------------------------
+ngOnInit() {
+    this.clienteService.getClientes().subscribe(
+
+        clientes => this.clientes = clientes
+
+        //(clientes) => {this.clientes = clientes}
+
+        //function (clientes) {
+        //  this.clientes = clientes
+        //}
+    );
+}
+
+----------------------------------------------------
+Bootstrap instalado en el directorio src/assets
+----------------------------------------------------
+"styles": [
+    "src/styles.css",
+    "src/assets/css/bootstrap.min.css"
+],
+"scripts": [
+    "src/assets/js/jquery-3.5.1.slim.min.js",
+    "src/assets/js/popper.min.js",
+    "src/assets/js/bootstrap.min.js"
+]
+
+----------------------------------------------------
+Bootstrap instalado en node_modules
+----------------------------------------------------
+npm install bootstrap jquery popper.js --save
+
++ popper.js@1.16.1
++ jquery@3.5.1
++ bootstrap@4.5.0
+added 298 packages from 299 contributors and audited 1538 packages in 267.888s
+found 16 vulnerabilities (10 low, 3 moderate, 3 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+"styles": [
+    "src/styles.css",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+    "node_modules/jquery/dist/jquery.slim.min.js",
+    "node_modules/popper.js/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+
+----------------------------------------------------
+
+
