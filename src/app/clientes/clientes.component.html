@@ -29,9 +29,9 @@
           <!--button type="button" (click)="abrirModal(cliente)" class="btn btn-primary btn-sm"
             data-toggle="modal" data-target="#exampleModal">{{cliente.id}}</button-->
           <td>
-            <img *ngIf="cliente?.foto" (click)="abrirModal(cliente)" src="http://localhost:8080/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" class="img-thumbnail rounded"
+            <img *ngIf="cliente?.foto" (click)="abrirModal(cliente)" src="{{urlBackend}}/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" class="img-thumbnail rounded"
               style="width: 64px; cursor: pointer;" data-toggle="modal" data-target="#exampleModal"/>
-            <img *ngIf="!cliente?.foto" (click)="abrirModal(cliente)" src="http://localhost:8080/images/no_user.png" alt="Sin foto" class="img-thumbnail rounded"
+            <img *ngIf="!cliente?.foto" (click)="abrirModal(cliente)" src="{{urlBackend}}/images/no_user.png" alt="Sin foto" class="img-thumbnail rounded"
             style="width: 64px; cursor: pointer;" data-toggle="modal" data-target="#exampleModal"/>
           </td>
           <td>{{cliente.nombre}}</td>

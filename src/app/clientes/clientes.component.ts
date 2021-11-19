@@ -5,6 +5,7 @@ import swal from 'sweetalert2';
 import { tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { ModalService } from './detalle/modal.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-clientes',
@@ -15,12 +16,13 @@ export class ClientesComponent implements OnInit {
   clientes: Cliente[];
   paginador: any;
   clienteSeleccionado: Cliente;
+  private urlBackend = environment.urlBackend;
  
   //Se define el atributo clienteService y a su vez se inyecta el valor
   constructor(
     private clienteService: ClienteService, 
     private activatedRouter: ActivatedRoute,
-    private modalService: ModalService
+    public modalService: ModalService
   ) { }
 
   ngOnInit() {
