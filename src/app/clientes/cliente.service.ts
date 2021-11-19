@@ -7,6 +7,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 /*
 @Injectable({
@@ -16,7 +17,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class ClienteService {
 
-  private urlEndPoint: string = 'http://localhost:8080/api/clientes';
+  private urlEndPoint: string = environment.urlBackend + '/api/clientes';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient, private router: Router) { }

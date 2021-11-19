@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import swal from 'sweetalert2';
 import { HttpEventType} from '@angular/common/http';
 import { ModalService } from './modal.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'detalle-cliente',
@@ -19,6 +20,7 @@ export class DetalleComponent implements OnInit {
   private fotoSeleccionada: File;
   public errores: string[];
   progreso: number = 0;
+  private urlBackend = environment.urlBackend;
 
   /*
   * Inyectamos por constructor el ClienteService y el ActivatedRoute que lo necesitamos
@@ -27,7 +29,7 @@ export class DetalleComponent implements OnInit {
   constructor(
     private clienteService: ClienteService,
     //private activatedRoute: ActivatedRoute,
-    private modalService: ModalService
+    public modalService: ModalService
   ){}
 
   ngOnInit() {
